@@ -16,3 +16,55 @@ body nav div img.rounded-circle {
 .page {
   min-height: 120vh;
 }
+
+/* AUTHOR NOTE SECTION START */
+#author-note {
+  background-color: yellow;
+  min-height: 70vh;
+}
+
+#author-note h1 {
+  font-size: 60px;
+}
+
+#author-note .note-content {
+  max-width: 50%;
+}
+
+#author-note .note-image {
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  #author-note .note-content {
+    max-width: 50%;
+  }
+
+  #author-note .note-image {
+    width: 50%;
+  }
+  #author-note .note-image img {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #author-note .note-content {
+    max-width: 100%;
+  }
+
+  #author-note .note-image {
+    width: 100%;
+  }
+  #author-note .note-image img {
+    width: 60%;
+  }
+}
+
+/* AUTHOR NOTE SECTION END */
+
+/* FEATURE SECTION START  */
+#features {
+  min-height: 70vh;
+}
+/* FEATURE SECTION END  */
