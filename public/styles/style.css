@@ -65,6 +65,39 @@ body nav div img.rounded-circle {
 
 /* FEATURE SECTION START  */
 #features {
+  text-align: center;
   min-height: 70vh;
+}
+
+#features h1 {
+  font-size: 50px;
+  display: none;
+}
+#features img {
+  width: 100px;
+  /* display: inline-block; */
+}
+.feature-img {
+  height: 150px;
+}
+.feature-item {
+  max-width: 210px;
+  margin: 3rem;
+}
+
+#features .node-img {
+  width: 80%;
+}
+#features .ejs-logo {
+  width: 90%;
+}
+#features h3 {
+  font-size: 22px;
+}
+#features p {
+  font-size: 15px;
+}
+#features .git-logo {
+  width: 90%;
 }
 /* FEATURE SECTION END  */
