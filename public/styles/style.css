@@ -1,0 +1,18 @@
+/* Nav bar: User context menu dropdown  */
+body nav div.dropdown {
+  display: inline-block;
+  font-size: medium;
+}
+/* Nav bar: User profile picture  */
+body nav div img.rounded-circle {
+  width: 30px;
+}
+
+/* Nav bar: Brand */
+.navbar-brand {
+  color: yellow !important;
+}
+
+.page {
+  min-height: 120vh;
+}
