@@ -101,3 +101,27 @@ body nav div img.rounded-circle {
   width: 90%;
 }
 /* FEATURE SECTION END  */
+
+/* TESTIMONIALS SECTION START  */
+#testimonials {
+  min-height: 70vh;
+  background-color: tomato;
+}
+
+#testimonials .testi-cont {
+  height: 70vh;
+}
+
+.carousel-container {
+  vertical-align: middle;
+  padding-top: 200px;
+}
+
+.carousel-indicators {
+  top: 200px;
+}
+
+.carousel-item {
+  padding: 0 200px;
+}
+/* TESTIMONIALS SECTION END  */
