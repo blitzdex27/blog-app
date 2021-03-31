@@ -19,6 +19,13 @@
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
       crossorigin="anonymous"
     ></script>
+    <!-- FONTAWESOME  -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
 
     <!-- STYLES.CSS  -->
     <!-- -> for HTML editing -->
@@ -443,8 +450,72 @@
 
       <!-- SECTION: FEEDBACK START -->
       <section id="feedback">
+        <h1 class="text-center">Give this site a feedback!</h1>
+        <div class="feedback-container">
+          <form action="POST">
+            <div class="mb-3">
+              <label for="feedbackEmail" class="form-label"
+                >Email address</label
+              >
+              <input
+                id="feedbackEmail"
+                type="email"
+                class="form-control"
+                aria-describedby="emailHelp"
+                placeholder="john@doe.com"
+              />
+              <div id="emailHelp" class="form-text">
+                I will not share your email!
+              </div>
+            </div>
 
-        
+            <div class="mb-3">
+              <label for="feedbackName" class="form-label">Name</label>
+              <input
+                id="feedbackName"
+                type="text"
+                class="form-control"
+                aria-describedby="nameHelp"
+                placeholder="John Doe"
+              />
+              <div id="nameHelp" class="form-text">
+                It's better if you provide your name too!
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="feedbackContent" class="form-label">Content</label>
+              <textarea
+                name="feedbackContent"
+                id="feedbackContent"
+                rows="5"
+                class="form-control"
+                aria-describedby="contentHelp"
+                placeholder="Your feedback will help me!"
+              ></textarea>
+              <div id="contentHelp" class="form-text">
+                Please be specific with your feedback content!
+              </div>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="feedbackCheck"
+                aria-describedby="checkHelp"
+              />
+              <label class="form-check-label" for="exampleCheck1">Agree</label>
+            </div>
+            <div id="checkHelp" class="form-text">
+              By marking this checkbox, you agree to publicly post your feedback
+              as testimonial in within this site. Your feedback may or may not
+              be posted in this site.
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
         <!-- SECTION: FEEDBACK END -->
       </section>
 
@@ -463,5 +534,17 @@
         document.querySelector(".logged-in").classList.add("d-none");
       }
     </script>
+    <!-- SECTION FOOTER START  -->
+    <hr />
+    <section id="footer" class="p-2 text-center">
+      <a class="m-1" href="#"> <i class="fab fa-twitter"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-facebook-f"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-linkedin-in"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-instagram"></i></a>
+      <a class="m-1" href="#"><i class="fas fa-envelope-square"></i></a>
+
+      <footer class="text-muted m-1">Copyright &copy 2021 Dexter Ramos</footer>
+    </section>
+    <!-- SECTION FOOTER END  -->
   </body>
 </html>

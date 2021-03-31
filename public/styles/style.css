@@ -125,3 +125,13 @@ body nav div img.rounded-circle {
   padding: 0 200px;
 }
 /* TESTIMONIALS SECTION END  */
+
+/* FEEDBACK START  */
+#feedback {
+  padding: 2rem;
+}
+.feedback-container {
+  padding: 1.5rem;
+  margin: 2rem 20rem;
+}
+/* FEEDBACK END  */
