@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express");
 const bodyParser = require("body-parser")
 
@@ -8,6 +9,12 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.set("view engine", "ejs")
 app.use(express.static(__dirname + "/public"))
 
+// Connect to mongoDB
+require("./components/services/mongoose")
+
+
+// initializing schemas
+require("./components/schemas/User")
 
 
 // Page Routes
