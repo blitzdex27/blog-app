@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BOOTSTRAP CSS 5.0 BETA3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
+    <!--BOOTSTRAP JAVASCRIPT 5.0 BETA3 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <!-- FONTAWESOME  -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+
+    <!-- BOOTSTRAP SOCIAL BUTTONS  -->
+    <link rel="stylesheet" href="../public/styles/bootstrap-social.css" />
+
+    <!-- STYLES.CSS  -->
+    <!-- -> for HTML editing -->
+    <link rel="stylesheet" href="../public/styles/style.css" />
+    <!-- -> for running in local host  -->
+    <!-- <link rel="stylesheet" href="/styles/style.css"> -->
+
+    <title>A blog</title>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR START  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <!-- Navbar inside container start -->
+      <div class="container">
+        <!-- Navbar brand  -->
+        <a class="navbar-brand" href="#"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="35"
+            fill="currentColor"
+            class="bi bi-cup-straw"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M13.902.334a.5.5 0 0 1-.28.65l-2.254.902-.4 1.927c.376.095.715.215.972.367.228.135.56.396.56.82 0 .046-.004.09-.011.132l-.962 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87-1.516 0-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 5.132A.78.78 0 0 1 3.5 5c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 3.614 6.867 3.5 8 3.5c.712 0 1.389.045 1.985.127l.464-2.215a.5.5 0 0 1 .303-.356l2.5-1a.5.5 0 0 1 .65.278zM9.768 4.607A13.991 13.991 0 0 0 8 4.5c-1.076 0-2.033.11-2.707.278A3.284 3.284 0 0 0 4.645 5c.146.073.362.15.648.222C5.967 5.39 6.924 5.5 8 5.5c.571 0 1.109-.03 1.588-.085l.18-.808zm.292 1.756C9.445 6.45 8.742 6.5 8 6.5c-1.133 0-2.176-.114-2.95-.308a5.514 5.514 0 0 1-.435-.127l.838 8.03c.013.121.06.186.102.215.357.249 1.168.69 2.438.69 1.27 0 2.081-.441 2.438-.69.042-.029.09-.094.102-.215l.852-8.03a5.517 5.517 0 0 1-.435.127 8.88 8.88 0 0 1-.89.17zM4.467 4.884s.003.002.005.006l-.005-.006zm7.066 0l-.005.006c.002-.004.005-.006.005-.006zM11.354 5a3.174 3.174 0 0 0-.604-.21l-.099.445.055-.013c.286-.072.502-.149.648-.222z"
+            />
+          </svg>
+          Blog App</a
+        >
+
+        <!-- Collapse button  -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items container start  -->
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- When redirecting to a specific item in the list: -->
+            <!-- -> Add active class on one of the listed items -->
+            <!-- -> Remove active class on the rest of the items -->
+
+            <!-- Home  -->
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <!-- User blogs  -->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">User blogs</a>
+            </li>
+            <!-- About  -->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">About</a>
+            </li>
+          </ul>
+          <!-- User account buttons  -->
+
+          <!-- Login, sign up, user context menu START  -->
+          <div class="nav-item">
+            <!-- Login and Sign up button -->
+            <div class="not-logged-in">
+              <!-- Login  -->
+              <a href="#"
+                ><button class="btn btn-sm bg-light">Log in</button></a
+              >
+              <!-- Sign up  -->
+              <a href="#"
+                ><button class="btn btn-sm bg-warning">Sign up</button></a
+              >
+            </div>
+
+            <!-- User context menu  -->
+            <div
+              class="nav-item dropdown bg-dark rounded-pill d-none logged-in"
+            >
+              <a
+                class="nav-link dropdown-toggle text-light"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <!-- User image  -->
+                <img
+                  style="width: 30px"
+                  src="https://lh3.googleusercontent.com/a-/AOh14GgBuP3JYMlW8F8-P7Za_E06OMpUZDVrMzEulimb3w=s96-c"
+                  alt=""
+                  class="rounded-circle"
+                />
+                <!-- User given name  -->
+                Dexter
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Log out</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Login, sign up, dropdown END  -->
+          </div>
+
+          <!-- Navbar Items container end  -->
+        </div>
+
+        <!-- Navbar inside container end -->
+      </div>
+    </nav>
+    <!-- NAVIGATION BAR END -->
+
+    <!-- PAGE START  -->
+    <div class="page">
+      <section id="signup">
+        <div class="page-single-form-container bg-dark rounded">
+          <div class="brand mb-3 text-center">
+            <a class="navbar-brand fs-1" href="#"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="70"
+                height="70"
+                fill="currentColor"
+                class="bi bi-cup-straw"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M13.902.334a.5.5 0 0 1-.28.65l-2.254.902-.4 1.927c.376.095.715.215.972.367.228.135.56.396.56.82 0 .046-.004.09-.011.132l-.962 9.068a1.28 1.28 0 0 1-.524.93c-.488.34-1.494.87-3.01.87-1.516 0-2.522-.53-3.01-.87a1.28 1.28 0 0 1-.524-.93L3.51 5.132A.78.78 0 0 1 3.5 5c0-.424.332-.685.56-.82.262-.154.607-.276.99-.372C5.824 3.614 6.867 3.5 8 3.5c.712 0 1.389.045 1.985.127l.464-2.215a.5.5 0 0 1 .303-.356l2.5-1a.5.5 0 0 1 .65.278zM9.768 4.607A13.991 13.991 0 0 0 8 4.5c-1.076 0-2.033.11-2.707.278A3.284 3.284 0 0 0 4.645 5c.146.073.362.15.648.222C5.967 5.39 6.924 5.5 8 5.5c.571 0 1.109-.03 1.588-.085l.18-.808zm.292 1.756C9.445 6.45 8.742 6.5 8 6.5c-1.133 0-2.176-.114-2.95-.308a5.514 5.514 0 0 1-.435-.127l.838 8.03c.013.121.06.186.102.215.357.249 1.168.69 2.438.69 1.27 0 2.081-.441 2.438-.69.042-.029.09-.094.102-.215l.852-8.03a5.517 5.517 0 0 1-.435.127 8.88 8.88 0 0 1-.89.17zM4.467 4.884s.003.002.005.006l-.005-.006zm7.066 0l-.005.006c.002-.004.005-.006.005-.006zM11.354 5a3.174 3.174 0 0 0-.604-.21l-.099.445.055-.013c.286-.072.502-.149.648-.222z"
+                />
+              </svg>
+              Blog App</a
+            >
+          </div>
+          <h1 class="text-light text-center mb-5 fs-2">Sign Up</h1>
+          <form>
+            <div class="mb-3">
+              <!-- ENTER GIVEN NAME AND FAMILY NAME  -->
+              <!-- Given and family name START  -->
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="signUpGivenName"
+                      placeholder="John"
+                    />
+                    <label for="signUpGivenName">Given name</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="signUpLastName"
+                      placeholder="Doe"
+                    />
+                    <label for="signUpLastName">Last name</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Given and family name END  -->
+
+            <!-- DISPLAY EMAIL  -->
+            <div class="mb-3">
+              <!-- ENTER GIVEN NAME AND FAMILY NAME  -->
+              <!-- Given and family name START  -->
+              <div class="row g-2">
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="signUpDisplayName"
+                      placeholder="John"
+                    />
+                    <label for="signUpDisplayName">Display/Public name</label>
+                  </div>
+                </div>
+                <div class="col-md">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="signupEmail"
+                      placeholder="john@doe.com"
+                    />
+                    <label for="signupEmail">Email</label>
+                    <!-- Email END  -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Given and family name END  -->
+
+            <div class="mb-3">
+              <!-- Password START  -->
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signupPassword"
+                  placeholder="Password"
+                />
+                <label for="signupPassword">Password</label>
+                <!-- Password END  -->
+              </div>
+            </div>
+
+            <!-- Confirm Password START  -->
+            <div class="mb-3">
+              <div class="form-floating">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signupConfirmPassword"
+                  placeholder="Confirm Password"
+                />
+                <label for="signupConfirmPassword">Confirm Password</label>
+                <!-- Confirm Password END  -->
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-lg btn-primary w-100 my-3">
+              Sign up
+            </button>
+          </form>
+          <!-- GOOGLE SIGN IN  -->
+          <a
+            class="text-center w-100 btn btn-lg btn-block btn-social btn-google"
+            ><i class="fab fa-google"></i>
+            Sign up with Google
+          </a>
+        </div>
+      </section>
+
+      <!-- PAGE END  -->
+    </div>
+
+    <script>
+      // Check if user is logged in
+
+      let userIsLoggedIn = false;
+      if (userIsLoggedIn === true) {
+        document.querySelector(".not-logged-in").classList.add("d-none");
+        document.querySelector(".logged-in").classList.remove("d-none");
+      } else {
+        document.querySelector(".not-logged-in").classList.remove("d-none");
+        document.querySelector(".logged-in").classList.add("d-none");
+      }
+    </script>
+    <!-- SECTION FOOTER START  -->
+    <hr />
+    <section id="footer" class="p-2 text-center">
+      <a class="m-1" href="#"> <i class="fab fa-twitter"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-facebook-f"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-linkedin-in"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-instagram"></i></a>
+      <a class="m-1" href="#"><i class="fas fa-envelope-square"></i></a>
+
+      <footer class="text-muted m-1">Copyright &copy 2021 Dexter Ramos</footer>
+    </section>
+    <!-- SECTION FOOTER END  -->
+  </body>
+</html>
