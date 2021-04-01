@@ -20,7 +20,7 @@ module.exports = (app) => {
 
     app.route("/signup")
         .get((req, res) => {
-            res.render("signup", {info: ""})
+            res.render("signup", {info: "", isAuthenticated: req.isAuthenticated()})
         })
 
         .post((req, res) => {
@@ -35,7 +35,7 @@ module.exports = (app) => {
 
             console.log(username)
             if (email == "") {
-                res.render("signup", {info: "Please enter an email."})
+                res.render("signup", {info: "Please enter an email.", isAuthenticated: req.isAuthenticated()})
             }
 
             User.register(new User( {
@@ -48,7 +48,7 @@ module.exports = (app) => {
                  
                 }), password, (err, account) => {
                 if (err) {
-                    res.render("signup", {info: "Sorry, the email is already used. Please use a different one."})
+                    res.render("signup", {info: "Sorry, the email is already used. Please use a different one.", isAuthenticated: req.isAuthenticated()})
                 } else {
                     passport.authenticate('local')(req, res, function() {
                         res.redirect("/")
@@ -61,7 +61,7 @@ module.exports = (app) => {
 
     app.route("/signin")
         .get((req, res) => {
-            res.render("signin")
+            res.render("signin", {isAuthenticated: req.isAuthenticated()})
         })
 
         .post((req, res) => {

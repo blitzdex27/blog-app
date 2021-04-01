@@ -3,8 +3,9 @@
 
     <script>
       // Check if user is logged in
+      console.log(<%= isAuthenticated %>)
 
-      let userIsLoggedIn = false;
+      let userIsLoggedIn = <%= isAuthenticated %>;
       if (userIsLoggedIn === true) {
         document.querySelector(".not-logged-in").classList.add("d-none");
         document.querySelector(".logged-in").classList.remove("d-none");
