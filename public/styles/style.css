@@ -110,6 +110,14 @@ body nav div img.rounded-circle {
 }
 /* FEEDBACK END  */
 
+/* LOGIN AND SIGN UP START  */
+
+#signup .page-single-form-container {
+  padding: 3rem;
+  margin: 2rem 20rem;
+}
+/* LOGIN AND SIGN UP END  */
+
 /* BREAKPOINTS  */
 @media screen and (max-width: 1200px) {
   .carousel-item {
@@ -117,6 +125,10 @@ body nav div img.rounded-circle {
   }
   .feedback-container {
     margin: 2rem 15rem;
+  }
+  #signup .page-single-form-container {
+    padding: 1.5rem;
+    margin: 1.5rem 15rem;
   }
 }
 
@@ -136,6 +148,10 @@ body nav div img.rounded-circle {
   }
   .feedback-container {
     margin: 2rem 10rem;
+  }
+  #signup .page-single-form-container {
+    padding: 1.5rem;
+    margin: 1rem 10rem;
   }
 }
 
@@ -159,6 +175,10 @@ body nav div img.rounded-circle {
   #testimonials h2 {
     font-size: 20px;
   }
+  #signup .page-single-form-container {
+    padding: 1.5rem;
+    margin: 1rem 5rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -167,5 +187,9 @@ body nav div img.rounded-circle {
   }
   .feedback-container {
     margin: 2rem 1rem;
+  }
+  #signup .page-single-form-container {
+    padding: 1.5rem;
+    margin: 0.5rem 1rem;
   }
 }
