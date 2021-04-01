@@ -1,8 +1,10 @@
 const passport =  require("passport")
 const GoogleStrategy = require("passport-google-oauth20").Strategy
+const LocalStrategy = require("passport-local").Strategy
 const mongoose = require("mongoose")
 
 const User = mongoose.model("User")
+
 
 // Serialize and deserialize
 passport.serializeUser((user, done) => {
@@ -42,6 +44,7 @@ passport.use(
             } else {
                 console.log("Checking if google email exists from other account...")
                 User.findOne({email: profile._json.email}, (err, foundUserWithSameEmail) => {
+                    if (err) { done(err) }
                     if (foundUserWithSameEmail) {
                         done(null, foundUserWithSameEmail)
                     } else {
@@ -67,3 +70,6 @@ passport.use(
 
 
 
+// Passport will also use Local Strategy
+
+passport.use(User.createStrategy())

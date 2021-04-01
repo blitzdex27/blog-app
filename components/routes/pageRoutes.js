@@ -34,9 +34,9 @@ app.route("/signin")
     res.render("signin")
 })
 
-app.route("/signup")
-.get((req, res) => {
-    res.render("signup")
-})
+// app.route("/signup")
+// .get((req, res) => {
+//     res.render("signup")
+// })
 
 }

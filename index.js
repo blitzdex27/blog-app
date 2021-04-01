@@ -2,7 +2,8 @@ require("dotenv").config()
 const express = require("express");
 const bodyParser = require("body-parser")
 const passport = require("passport")
-const cookieSession = require("cookie-session")
+// const cookieSession = require("cookie-session")
+const session = require("express-session")
 
 const app = express()
 
@@ -22,12 +23,20 @@ require("./components/schemas/Post")
 // Passport strategies
 require("./components/services/passport")
 
-// Make express use the passport strategies
-app.use(cookieSession({
-    maxAge: 1*30*60*1000,
-    keys: [process.env.COOKIE_KEY]
+
+// app.use(cookieSession({
+//     maxAge: 1*30*60*1000,
+//     keys: [process.env.COOKIE_KEY]
+// }))
+
+// Use session
+app.use(session({
+    secret: process.env.COOKIE_KEY,
+    resave: false,
+    saveUninitialized: false
 }))
 
+// Make express use the passport strategies
 app.use(passport.initialize())
 app.use(passport.session())
 

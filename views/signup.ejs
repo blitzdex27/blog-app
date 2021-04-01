@@ -20,7 +20,8 @@
         >
       </div>
       <h1 class="text-light text-center mb-5 fs-2">Please sign up</h1>
-      <form>
+      <form action="/signup" method="POST">
+        <p class="text-danger text-center"><%= info %></p>
         <div class="mb-3">
           <!-- ENTER GIVEN NAME AND FAMILY NAME  -->
           <!-- Given and family name START  -->
@@ -32,6 +33,7 @@
                   class="form-control"
                   id="signUpGivenName"
                   placeholder="John"
+                  name="signupGivenName"
                 />
                 <label for="signUpGivenName">Given name</label>
               </div>
@@ -43,6 +45,7 @@
                   class="form-control"
                   id="signUpLastName"
                   placeholder="Doe"
+                  name="signupLastName"
                 />
                 <label for="signUpLastName">Last name</label>
               </div>
@@ -64,6 +67,7 @@
                   class="form-control"
                   id="signUpDisplayName"
                   placeholder="John"
+                  name="signupDisplayName"
                 />
                 <label for="signUpDisplayName">Display/Public name</label>
               </div>
@@ -75,6 +79,7 @@
                   class="form-control"
                   id="signupEmail"
                   placeholder="john@doe.com"
+                  name="username"
                 />
                 <label for="signupEmail">Email</label>
                 <!-- Email END  -->
@@ -92,8 +97,10 @@
               class="form-control"
               id="signupPassword"
               placeholder="Password"
+              name="password"
             />
             <label for="signupPassword">Password</label>
+
             <!-- Password END  -->
           </div>
         </div>
@@ -106,13 +113,15 @@
               class="form-control"
               id="signupConfirmPassword"
               placeholder="Confirm Password"
+              name="signupConfirmPassword"
             />
             <label for="signupConfirmPassword">Confirm Password</label>
             <!-- Confirm Password END  -->
+            <p id="signup-password-warning" class="invisible text-danger">* Password did not matched!</p>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-lg btn-primary w-100 my-3">
+        <button onclick="isPasswordMatched()" id="signup-button" type="button" class="btn btn-lg btn-primary w-100 my-3">
           Sign up
         </button>
       </form>
@@ -125,7 +134,33 @@
     </div>
   </section>
 
+<script>
 
+    function isPasswordMatched(){
+         
+        const password = document.querySelector("#signupPassword").value
+        const cPassword = document.querySelector("#signupConfirmPassword").value
+        const passMatched = password === cPassword
+        console.log(passMatched)
+        if (!passMatched){
+            document.querySelector("#signup-password-warning").classList.remove("invisible")
+            document.querySelector("#signup-button").setAttribute("type", "button")
+        } else {
+            document.querySelector("#signup-password-warning").classList.add("invisible")
+            document.querySelector("#signup-button").setAttribute("type", "submit")
+            document.querySelector("#signup-button").click()
+        }
+    }
+
+
+
+
+
+
+
+
+
+</script>
 
 
 <%- include("./partials/footer") -%>
