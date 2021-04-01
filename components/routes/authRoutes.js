@@ -58,4 +58,35 @@ module.exports = (app) => {
             })
 
         })
+
+    app.route("/signin")
+        .get((req, res) => {
+            res.render("signin")
+        })
+
+        .post((req, res) => {
+            const userCredentials = new User({
+                username: req.body.username,
+                password: req.body.password
+            })
+
+            console.log("Checking user credentials...")
+            req.login(userCredentials, (err) => {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log("Authenticating user...")
+                    passport.authenticate('local')(req, res, () => {
+                        console.log("User us authenticated")
+                        res.redirect("/")
+                    })
+                }
+            })
+        })
+
+    app.route("/logout")
+        .get((req, res) => {
+            req.logout()
+            res.redirect("/")
+        })
 }

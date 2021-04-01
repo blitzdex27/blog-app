@@ -19,7 +19,7 @@
             >
           </div>
           <h1 class="text-light text-center mb-5 fs-2">Please sign in</h1>
-          <form>
+          <form action="/signin" method="POST">
             <div class="mb-3">
               <div class="form-floating">
                 <input
@@ -27,6 +27,7 @@
                   class="form-control"
                   id="signinEmail"
                   placeholder="john@doe.com"
+                  name="username"
                 />
                 <label for="signinEmail">Email</label>
                 <!-- Email END  -->
@@ -43,6 +44,7 @@
                   class="form-control"
                   id="signinPassword"
                   placeholder="Password"
+                  name="password"
                 />
                 <label for="signinPassword">Password</label>
                 <!-- Password END  -->

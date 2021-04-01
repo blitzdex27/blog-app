@@ -29,14 +29,5 @@ app.route("/blog")
 
 
 
-app.route("/signin")
-.get((req, res) => {
-    res.render("signin")
-})
-
-// app.route("/signup")
-// .get((req, res) => {
-//     res.render("signup")
-// })
 
 }
