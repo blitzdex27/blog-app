@@ -129,6 +129,12 @@ body nav div img.rounded-circle {
 }
 /* USER BLOGS END  */
 
+/* BLOG START  */
+.blog-content {
+  white-space: pre-line;
+}
+/* BLOG END  */
+
 /* BREAKPOINTS  */
 @media screen and (max-width: 1200px) {
   .carousel-item {
