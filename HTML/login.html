@@ -102,7 +102,7 @@
             <div class="not-logged-in">
               <!-- Login  -->
               <a href="#"
-                ><button class="btn btn-sm bg-light">Log in</button></a
+                ><button class="btn btn-sm bg-light">Sign in</button></a
               >
               <!-- Sign up  -->
               <a href="#"
@@ -173,69 +173,21 @@
               Blog App</a
             >
           </div>
-          <h1 class="text-light text-center mb-5 fs-2">Sign Up</h1>
+          <h1 class="text-light text-center mb-5 fs-2">Please sign in</h1>
           <form>
             <div class="mb-3">
-              <!-- ENTER GIVEN NAME AND FAMILY NAME  -->
-              <!-- Given and family name START  -->
-              <div class="row g-2">
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="signUpGivenName"
-                      placeholder="John"
-                    />
-                    <label for="signUpGivenName">Given name</label>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="signUpLastName"
-                      placeholder="Doe"
-                    />
-                    <label for="signUpLastName">Last name</label>
-                  </div>
-                </div>
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="signinEmail"
+                  placeholder="john@doe.com"
+                />
+                <label for="signinEmail">Email</label>
+                <!-- Email END  -->
               </div>
             </div>
 
-            <!-- Given and family name END  -->
-
-            <!-- DISPLAY EMAIL  -->
-            <div class="mb-3">
-              <!-- ENTER GIVEN NAME AND FAMILY NAME  -->
-              <!-- Given and family name START  -->
-              <div class="row g-2">
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="signUpDisplayName"
-                      placeholder="John"
-                    />
-                    <label for="signUpDisplayName">Display/Public name</label>
-                  </div>
-                </div>
-                <div class="col-md">
-                  <div class="form-floating">
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="signupEmail"
-                      placeholder="john@doe.com"
-                    />
-                    <label for="signupEmail">Email</label>
-                    <!-- Email END  -->
-                  </div>
-                </div>
-              </div>
-            </div>
             <!-- Given and family name END  -->
 
             <div class="mb-3">
@@ -244,37 +196,23 @@
                 <input
                   type="password"
                   class="form-control"
-                  id="signupPassword"
+                  id="signinPassword"
                   placeholder="Password"
                 />
-                <label for="signupPassword">Password</label>
+                <label for="signinPassword">Password</label>
                 <!-- Password END  -->
               </div>
             </div>
 
-            <!-- Confirm Password START  -->
-            <div class="mb-3">
-              <div class="form-floating">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="signupConfirmPassword"
-                  placeholder="Confirm Password"
-                />
-                <label for="signupConfirmPassword">Confirm Password</label>
-                <!-- Confirm Password END  -->
-              </div>
-            </div>
-
             <button type="submit" class="btn btn-lg btn-primary w-100 my-3">
-              Sign up
+              Sign in
             </button>
           </form>
           <!-- GOOGLE SIGN IN  -->
           <a
             class="text-center w-100 btn btn-lg btn-block btn-social btn-google"
             ><i class="fab fa-google"></i>
-            Sign up with Google
+            Sign in with Google
           </a>
         </div>
       </section>

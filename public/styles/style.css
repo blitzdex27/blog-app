@@ -118,6 +118,17 @@ body nav div img.rounded-circle {
 }
 /* LOGIN AND SIGN UP END  */
 
+/* USER BLOGS START  */
+#user-blogs .user-blogs {
+  height: 80vh;
+}
+#user-blogs .blog-date {
+  position: absolute;
+  right: 15px;
+  /* font-size: 10px; */
+}
+/* USER BLOGS END  */
+
 /* BREAKPOINTS  */
 @media screen and (max-width: 1200px) {
   .carousel-item {
