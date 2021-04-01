@@ -1,0 +1,29 @@
+     <!-- PAGE END  -->
+    </div>
+
+    <script>
+      // Check if user is logged in
+
+      let userIsLoggedIn = false;
+      if (userIsLoggedIn === true) {
+        document.querySelector(".not-logged-in").classList.add("d-none");
+        document.querySelector(".logged-in").classList.remove("d-none");
+      } else {
+        document.querySelector(".not-logged-in").classList.remove("d-none");
+        document.querySelector(".logged-in").classList.add("d-none");
+      }
+    </script>
+    <!-- SECTION FOOTER START  -->
+    <hr />
+    <section id="footer" class="p-2 text-center">
+      <a class="m-1" href="#"> <i class="fab fa-twitter"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-facebook-f"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-linkedin-in"></i></a>
+      <a class="m-1" href="#"> <i class="fab fa-instagram"></i></a>
+      <a class="m-1" href="#"><i class="fas fa-envelope-square"></i></a>
+
+      <footer class="text-muted m-1">Copyright &copy 2021 Dexter Ramos</footer>
+    </section>
+    <!-- SECTION FOOTER END  -->
+  </body>
+</html>
