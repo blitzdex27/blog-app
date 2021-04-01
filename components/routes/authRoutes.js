@@ -1,5 +1,7 @@
 const passport = require("passport")
 const mongoose = require("mongoose")
+const withPicture = require("../special-functions/withPicture")
+const userData = require("../special-functions/userData")
 
 const User = mongoose.model("User")
 
@@ -20,7 +22,8 @@ module.exports = (app) => {
 
     app.route("/signup")
         .get((req, res) => {
-            res.render("signup", {info: "", isAuthenticated: req.isAuthenticated()})
+
+            res.render("signup", {info: "", isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
         })
 
         .post((req, res) => {
@@ -35,7 +38,7 @@ module.exports = (app) => {
 
             console.log(username)
             if (email == "") {
-                res.render("signup", {info: "Please enter an email.", isAuthenticated: req.isAuthenticated()})
+                res.render("signup", {info: "Please enter an email.", isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
             }
 
             User.register(new User( {
@@ -48,7 +51,7 @@ module.exports = (app) => {
                  
                 }), password, (err, account) => {
                 if (err) {
-                    res.render("signup", {info: "Sorry, the email is already used. Please use a different one.", isAuthenticated: req.isAuthenticated()})
+                    res.render("signup", {info: "Sorry, the email is already used. Please use a different one.", isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
                 } else {
                     passport.authenticate('local')(req, res, function() {
                         res.redirect("/")
@@ -61,7 +64,8 @@ module.exports = (app) => {
 
     app.route("/signin")
         .get((req, res) => {
-            res.render("signin", {isAuthenticated: req.isAuthenticated()})
+
+            res.render("signin", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
         })
 
         .post((req, res) => {
@@ -86,6 +90,7 @@ module.exports = (app) => {
 
     app.route("/logout")
         .get((req, res) => {
+
             req.logout()
             res.redirect("/")
         })

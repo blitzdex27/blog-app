@@ -135,6 +135,23 @@ body nav div img.rounded-circle {
 }
 /* BLOG END  */
 
+/* PROFILE IMAGE START  */
+#temp-small-profile-pic {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background:rgb(29, 29, 170);
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  /* margin: 1px 0; */
+}
+
+/* PROFILE IMAGE END  */
+
+
+
 /* BREAKPOINTS  */
 @media screen and (max-width: 1200px) {
   .carousel-item {

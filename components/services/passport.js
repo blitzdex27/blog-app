@@ -16,7 +16,7 @@ passport.deserializeUser((id, done) => {
     console.log("User is being deserialized...")
     User.findById(id, (err, user) => {
         console.log("Deserializing user. The output below was from findById callback")
-        // console.log(user)
+
         done(err, user)
     })
     // .then(user => {
@@ -46,7 +46,8 @@ passport.use(
                 User.findOne({email: profile._json.email}, (err, foundUserWithSameEmail) => {
                     if (err) { done(err) }
                     if (foundUserWithSameEmail) {
-                        done(null, foundUserWithSameEmail)
+                        console.log("Existing google mail found!")
+                        done(null, undefined)
                     } else {
                         console.log("Registering the new user in the database...")
                         new User({

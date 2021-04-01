@@ -2,13 +2,35 @@
     </div>
 
     <script>
-      // Check if user is logged in
-      console.log(<%= isAuthenticated %>)
+      
 
-      let userIsLoggedIn = <%= isAuthenticated %>;
+    // Temporary profile picture 
+
+     
+
+      console.log("With picture? <%= withPic %>")
+      console.log("isAuthenticated? <%= isAuthenticated %>")
+
+    // Check if user is logged in
+
+      let userIsLoggedIn = <%= isAuthenticated %>
       if (userIsLoggedIn === true) {
+        // USER IS LOGGED IN 
         document.querySelector(".not-logged-in").classList.add("d-none");
         document.querySelector(".logged-in").classList.remove("d-none");
+
+        if (!<%= withPic %>) {
+          const initials = "<%= user.givenName.charAt(0) + user.familyName.charAt(0) %>"
+          document.querySelector("#temp-small-profile-pic").innerHTML = initials
+          document.querySelector("#temp-small-profile-pic").classList.remove("d-none")
+          document.querySelector("#small-profile-pic").classList.add("d-none")
+         
+        } 
+        
+
+
+
+
       } else {
         document.querySelector(".not-logged-in").classList.remove("d-none");
         document.querySelector(".logged-in").classList.add("d-none");
