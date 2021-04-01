@@ -15,7 +15,7 @@ require("./components/services/mongoose")
 
 // initializing schemas
 require("./components/schemas/User")
-
+require("./components/schemas/Post")
 
 // Page Routes
 require("./components/routes/pageRoutes")(app)

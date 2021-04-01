@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
 const User = mongoose.model("User")
+const Post = mongoose.model("Post")
 
 
 module.exports = (app) => {
@@ -37,11 +38,5 @@ app.route("/signup")
 .get((req, res) => {
     res.render("signup")
 })
-
-
-// test mongo
-app.route("/test-mongo")
-    .get((req, res) => {
-
 
 }
