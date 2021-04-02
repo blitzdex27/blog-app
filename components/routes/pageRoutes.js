@@ -35,7 +35,15 @@ app.route("/blog")
     res.render("blog", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
 })
 
+app.route("/dashboard/:userID")
+.get((req, res) => {
+    res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
+})
 
+app.route("/dashboard/:userID/edit-display-name")
+.post((req, res) => {
+    res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
+})
 
 
 }

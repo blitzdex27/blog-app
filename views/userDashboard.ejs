@@ -1,0 +1,98 @@
+<%- include("./partials/header") -%>
+<h1>Dashboard</h1>
+<div class="card rounded" style="width: 18rem;">
+    <div class="d-none d-inline-block rounded-top" id="temp-profile-pic">
+
+    </div>
+    <img  id="profile-pic" src="" class="card-img-top" alt="...">
+
+    <div class="card-body rounded">
+      <h5 class="card-title">Account Information</h5>
+      <p  class="card-text"><span class="fw-bold">Display name: </span><span id="display-name"></span></p>
+      <div class="d-none" id="edit-display-name">
+        <form action="/dashboard/:userID/edit-display-name" method="post">
+            <input class="change-display-name" type="text">
+            <button type="button" onclick="confirmEditDisplayName()"  class="edit-btn btn btn-sm btn-primary">Confirm</button>
+            <button type="button" onclick="cancelEditDisplayName()" class="cancel-btn btn btn-sm btn-secondary">Cancel</button>
+        </form>
+        
+      </div>
+      
+      <p  class="card-text"><span class="fw-bold">Full name: </span><span id="full-name"></span></p>
+      <p  class="card-text"><span class="fw-bold">Email: </span><span id="user-email"></span></p>
+      <a type="button" onclick="editDisplayName()" href="#" class="btn btn-dark">Edit display name</a>
+    </div>
+  </div>
+
+<form action="/dashboard/:userID" method="post">
+
+    <h2>Compose</h2>
+    <h3>Title</h3>
+    <input name="postTitle" type="text">
+    <h3>Content</h3>
+    <textarea name="postContent" id="" cols="30" rows="10"></textarea>
+    <input type="checkbox">Public?
+    <button>Post</button>
+
+</form>
+
+<div>
+    <h2>Archive</h2>
+    <h3>Public posts</h3>
+    <ul>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+    </ul>
+    <h3>Private posts</h3>
+    <ul>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <li><a href="#">2021-04-02 Post Title 1</a></li>
+    </ul>
+</div>
+
+
+
+  <script>
+    //   alert("\nMessage from Dexter: \n\nHi there! The front end in this page is still in development so take it easy :)\n\n You still can do the core functions of this page.")
+
+
+      if (!<%= withPic %>) {
+          const initials = "<%= user.givenName.charAt(0) + user.familyName.charAt(0) %>"
+          document.querySelector("#temp-profile-pic").innerHTML = initials
+          document.querySelector("#temp-profile-pic").classList.remove("d-none")
+          document.querySelector("#profile-pic").classList.add("d-none")
+         
+        } 
+
+
+        
+
+        document.querySelector("#display-name").innerText = "<%= user.displayName %>"
+        document.querySelector("#full-name").innerText = "<%= user.givenName + " " + user.familyName %>"
+        document.querySelector("#user-email").innerText = "<%= user.email %>"
+
+        
+        function editDisplayName() {
+            document.querySelector(".change-display-name").setAttribute("value", "<%= user.displayName %>")
+            document.querySelector("#edit-display-name").classList.remove("d-none")
+        }
+
+        function cancelEditDisplayName() {
+            document.querySelector("#edit-display-name").classList.add("d-none")
+
+        }
+
+        function confirmEditDisplayName() {
+            document.querySelector(".edit-btn").setAttribute("type", "submit")
+            document.querySelector(".edit-btn").click()
+            
+
+        }
+  </script>
+
+
+<%- include("./partials/footer") -%>

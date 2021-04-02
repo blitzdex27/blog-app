@@ -148,7 +148,34 @@ body nav div img.rounded-circle {
   /* margin: 1px 0; */
 }
 
+#temp-profile-pic {
+  width: 17.9rem;
+  height: 17.9rem;
+  /* border-radius: 50%; */
+  background:rgb(182, 32, 32);
+  font-size: 7rem;
+  color: black;
+  text-align: center;
+  line-height: 16rem;
+  /* margin: 1px 0; */
+}
+
 /* PROFILE IMAGE END  */
+
+/* USER DASHBOARD START  */
+
+.change-display-name {
+  height: 29px;
+  width: 100px;
+  margin-right: 1rem
+}
+.edit-btn, .cancel-btn {
+  margin-bottom: 5px;
+}
+
+/* USER DASHBOARD END  */
+
+
 
 
 
