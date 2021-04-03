@@ -37,11 +37,25 @@ app.route("/blog")
 
 app.route("/dashboard/:userID")
 .get((req, res) => {
-    res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
+    if (req.isAuthenticated) {
+        if (req.params.userID === req.user.id) {
+            res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
+
+        } else {
+            res.redirect("/signin")
+        }
+
+    } else {
+        res.redirect("/signin")
+    }
+    
 })
 
 app.route("/dashboard/:userID/edit-display-name")
 .post((req, res) => {
+    
+
+
     res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
 })
 
