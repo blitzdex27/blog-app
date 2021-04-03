@@ -7,7 +7,9 @@ const postSchema = new mongoose.Schema({
     title: String,
     content: String,
     visibility: Boolean,
+    postedByString: String,
     postedBy: String,
+    specificDateTime: Number
 })
 
 new mongoose.model("Post", postSchema)

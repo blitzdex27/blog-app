@@ -4,7 +4,7 @@
     <div class="d-none d-inline-block rounded-top" id="temp-profile-pic">
 
     </div>
-    <img  id="profile-pic" src="" class="card-img-top" alt="...">
+    <img  id="profile-pic" src="<%= user.profilePicture %>" class="card-img-top" alt="...">
 
     <div class="card-body rounded">
       <h5 class="card-title">Account Information</h5>
@@ -24,14 +24,14 @@
     </div>
   </div>
 
-<form action="/dashboard/:userID" method="post">
+<form action="/dashboard/<%= user.id %>" method="post">
 
     <h2>Compose</h2>
     <h3>Title</h3>
     <input name="postTitle" type="text">
     <h3>Content</h3>
     <textarea name="postContent" id="" cols="30" rows="10"></textarea>
-    <input type="checkbox">Public?
+    <input name="isPublic" type="checkbox">Public?
     <button>Post</button>
 
 </form>
@@ -40,17 +40,20 @@
     <h2>Archive</h2>
     <h3>Public posts</h3>
     <ul>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <% posts.forEach(post => { %>
+            <% if (post.visibility === true) { %>
+                <li><a href="#"><%= post.datePosted + " " + post.title %></a></li>
+            <% } %>
+        <% }) %>
+
     </ul>
     <h3>Private posts</h3>
     <ul>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
-        <li><a href="#">2021-04-02 Post Title 1</a></li>
+        <% posts.forEach(post => { %>
+            <% if (post.visibility === true) { %>
+                <li><a href="#"><%= post.datePosted + " " + post.title %></a></li>
+            <% } %>
+        <% }) %>
     </ul>
 </div>
 

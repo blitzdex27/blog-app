@@ -38,8 +38,18 @@ app.route("/blog")
 app.route("/dashboard/:userID")
 .get((req, res) => {
     if (req.isAuthenticated) {
-        if (req.params.userID === req.user.id) {
-            res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
+        if (req.params.userID === userData(req.user).id) {
+
+            Post.find({postedBy: req.user.id}, (err, foundPosts) => {
+
+                res.render("userDashboard", {
+                    isAuthenticated: req.isAuthenticated(), 
+                    user: userData(req.user), 
+                    withPic: withPicture(userData(req.user)),
+                    posts: foundPosts
+                })
+
+            })
 
         } else {
             res.redirect("/signin")
@@ -50,6 +60,37 @@ app.route("/dashboard/:userID")
     }
     
 })
+
+.post((req, res) => {
+    if (req.params.userID === userData(req.user).id){
+        if (req.isAuthenticated){
+            const newPost = new Post({
+                datePosted: new Date().toLocaleDateString(),
+                title: req.body.postTitle,
+                content: req.body.postContent,
+                visibility: req.body.isPublic == "on" ? true : false,
+                postedByString:req.user.displayName,
+                postedBy: req.user.id,
+                specificDateTime: new Date().getTime()
+            })
+
+            newPost.save().then(post => {
+                User.findById(req.user.id, (err, foundUser) => {
+                    foundUser.posts.push(post.id)
+                    foundUser.save().then(() => {
+                        res.redirect("/dashboard/" + req.user.id)
+                    })
+                })
+            })
+
+        } else {
+            res.redirect("/signin")
+        }
+    } else {
+        res.redirect("/signin")
+    }
+})
+
 
 app.route("/dashboard/:userID/edit-display-name")
 .post((req, res) => {
