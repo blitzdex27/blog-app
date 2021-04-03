@@ -91,7 +91,7 @@ app.route("/dashboard/:userID")
         if (req.isAuthenticated()){
             const newPost = new Post({
                 datePosted: new Date().toLocaleDateString(),
-                timePosted: new Date().toLocaleTimeString,
+                timePosted: new Date().toLocaleTimeString(),
                 title: req.body.postTitle,
                 content: req.body.postContent,
                 visibility: req.body.isPublic == "on" ? true : false,
@@ -139,6 +139,36 @@ app.route("/dashboard/:userID/edit-display-name")
 
 
     
+})
+
+app.route("/dashboard/:userID/:postID")
+.get((req, res) => {
+
+    console.log("Checking if the session is authenticated...")
+    if (req.isAuthenticated()) {
+        console.log("Checking if the user is logged in is the same with the user who posted the blog...")
+        if (req.params.userID === userData(req.user).id){
+            Post.findById(req.params.postID, (err, foundPost) => {
+
+                res.render("blog", {
+                    isAuthenticated: req.isAuthenticated(), 
+                    user: userData(req.user), 
+                    withPic: withPicture(userData(req.user)),
+                    foundPost: foundPost
+                })
+        
+            })
+        } else {
+            console.log("req.params.userID is different from user.id")
+            res.redirect("/signin")
+        }
+    } else {
+        console.log("session is not authenticated...")
+        res.redirect("/signin")
+    }
+
+
+
 })
 
 

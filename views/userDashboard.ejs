@@ -42,10 +42,10 @@
     <ul>
         <% posts.forEach(post => { %>
             <% if (post.visibility === true) { %>
-                <li><a href="#"><%= post.datePosted + " " + post.title %></a></li>
+                <li><a href="/dashboard/<%= user.id + '/' + post.id %>"><%= post.datePosted + " " + post.title %></a></li>
             <% } %>
         <% }) %>
-
+                
     </ul>
     <h3>Private posts</h3>
     <ul>
