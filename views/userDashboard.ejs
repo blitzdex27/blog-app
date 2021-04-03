@@ -50,7 +50,7 @@
     <h3>Private posts</h3>
     <ul>
         <% posts.forEach(post => { %>
-            <% if (post.visibility === true) { %>
+            <% if (post.visibility === false) { %>
                 <li><a href="#"><%= post.datePosted + " " + post.title %></a></li>
             <% } %>
         <% }) %>
@@ -60,7 +60,7 @@
 
 
   <script>
-      alert("\nMessage from Dexter: \n\nHi there! The front end in this page is still in development so take it easy :)\n\nThis message will update in the near future if you can use the core functions :)")
+      alert("\nMessage from Dexter: \n\nHi there! The front end in this page is still in development so take it easy :)\n\nYou can still use the core functions so try them out! :)")
 
 
       if (!<%= withPic %>) {

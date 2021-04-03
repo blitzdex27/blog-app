@@ -18,9 +18,31 @@ app.route("/")
 app.route("/user-blogs")
 .get((req, res) => {
 
+    Post.find({visibility: true}, (err, foundPublicPosts) => {
+        res.render("userBlogs", {
+            isAuthenticated: req.isAuthenticated(), 
+            user: userData(req.user), 
+            withPic: withPicture(userData(req.user)),
+            foundPublicPosts: foundPublicPosts,
+        })
+    })
     
-    res.render("userBlogs", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
 })
+
+app.route("/user-blogs/:postID")
+.get((req, res) => {
+
+    Post.findById(req.params.postID, (err, foundPost) => {
+        res.render("blog", {
+            isAuthenticated: req.isAuthenticated(), 
+            user: userData(req.user), 
+            withPic: withPicture(userData(req.user)),
+            foundPost: foundPost
+
+        })
+    })
+})
+
 
 app.route("/about")
 .get((req, res) => {
@@ -32,12 +54,15 @@ app.route("/about")
 app.route("/blog")
 .get((req, res) => {
     
+
+
+
     res.render("blog", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
 })
 
 app.route("/dashboard/:userID")
 .get((req, res) => {
-    if (req.isAuthenticated) {
+    if (req.isAuthenticated()) {
         if (req.params.userID === userData(req.user).id) {
 
             Post.find({postedBy: req.user.id}, (err, foundPosts) => {
@@ -63,9 +88,10 @@ app.route("/dashboard/:userID")
 
 .post((req, res) => {
     if (req.params.userID === userData(req.user).id){
-        if (req.isAuthenticated){
+        if (req.isAuthenticated()){
             const newPost = new Post({
                 datePosted: new Date().toLocaleDateString(),
+                timePosted: new Date().toLocaleTimeString,
                 title: req.body.postTitle,
                 content: req.body.postContent,
                 visibility: req.body.isPublic == "on" ? true : false,

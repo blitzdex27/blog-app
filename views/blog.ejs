@@ -1,26 +1,13 @@
 <%- include("./partials/header") -%>
       
-     <!-- BLOG START  -->
-     <section id="blog" class="container pb-5">
-        <h1 class="text-center mt-5 mb-0">A Sunny Day</h1>
-        <p class="text-muted text-center mt-0">2021/04/01 16:02</p>
-        <p class="text-center">by Dexter Ramos</p>
-        <p class="blog-content">
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed turpis tincidunt id aliquet. Tristique senectus et netus et malesuada fames ac turpis egestas. Ullamcorper malesuada proin libero nunc. Semper quis lectus nulla at volutpat diam. Felis eget velit aliquet sagittis id consectetur. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Nam libero justo laoreet sit amet cursus sit. Aliquet bibendum enim facilisis gravida neque convallis a. Euismod elementum nisi quis eleifend quam adipiscing vitae.
-
-Nunc sed id semper risus. Purus sit amet volutpat consequat mauris nunc congue. Dolor sit amet consectetur adipiscing elit pellentesque habitant. Ipsum consequat nisl vel pretium lectus quam id leo in. Sollicitudin tempor id eu nisl nunc. Mauris augue neque gravida in. Et molestie ac feugiat sed. In iaculis nunc sed augue lacus viverra. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Elementum curabitur vitae nunc sed velit. At lectus urna duis convallis convallis tellus id interdum velit. Neque laoreet suspendisse interdum consectetur libero. Malesuada pellentesque elit eget gravida cum. At urna condimentum mattis pellentesque id nibh tortor id aliquet. Amet consectetur adipiscing elit pellentesque habitant. Pellentesque sit amet porttitor eget. Felis eget nunc lobortis mattis aliquam faucibus. Interdum varius sit amet mattis vulputate.
-
-Risus viverra adipiscing at in tellus integer feugiat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan. Tortor at auctor urna nunc id cursus metus. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit. Quis auctor elit sed vulputate mi. Nibh tellus molestie nunc non. Vulputate sapien nec sagittis aliquam malesuada bibendum. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Enim lobortis scelerisque fermentum dui faucibus in. Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. Volutpat est velit egestas dui id ornare arcu odio ut. Diam vulputate ut pharetra sit amet. Ut sem nulla pharetra diam. Elit ullamcorper dignissim cras tincidunt lobortis feugiat. Ut enim blandit volutpat maecenas volutpat.
-
-Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Massa ultricies mi quis hendrerit dolor magna eget. Adipiscing at in tellus integer feugiat scelerisque. Potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus. Nunc consequat interdum varius sit amet. Tristique senectus et netus et malesuada fames ac. Nullam vehicula ipsum a arcu cursus vitae congue mauris. Urna nec tincidunt praesent semper feugiat nibh sed. Nulla pharetra diam sit amet nisl suscipit adipiscing. Sed id semper risus in hendrerit gravida rutrum. Odio ut sem nulla pharetra. Dolor morbi non arcu risus quis varius quam quisque id. Eget mauris pharetra et ultrices neque. Tincidunt arcu non sodales neque sodales ut. Amet justo donec enim diam vulputate.
-
-Amet nisl purus in mollis nunc sed. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Adipiscing at in tellus integer feugiat. Nulla facilisi nullam vehicula ipsum. Semper quis lectus nulla at volutpat. Faucibus ornare suspendisse sed nisi. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Auctor augue mauris augue neque gravida in. Arcu non sodales neque sodales ut. Pharetra sit amet aliquam id diam maecenas ultricies mi eget. Urna neque viverra justo nec ultrices dui sapien eget mi.
-        </p>
-
-        <!-- BLOG END  -->
-
-
+<!-- BLOG START  -->
+<section id="blog" class="container pb-5">
+        <h1 class="text-center mt-5 mb-0"><%= foundPost.title %></h1>
+        <p class="text-muted text-center mt-0"><%= foundPost.datePosted + " " + foundPost.timePosted %></p>
+        <p class="text-center">by <%= foundPost.postedByString %></p>
+        <p class="blog-content"><%= foundPost.content %></p>
+<!-- BLOG END  -->
+</section>
 
 
 <%- include("./partials/footer") -%>

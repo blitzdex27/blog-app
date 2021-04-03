@@ -4,94 +4,25 @@
       <section id="user-blogs">
         <div class="d-flex justify-content-start flex-wrap p-5">
           <!-- BLOG 1  -->
-          <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
-            <div class="card-header">
-              <p class="d-inline">Dexter</p>
-              <span class="text-muted fs-6 blog-date">2021/04/01</span>
+          <% foundPublicPosts.forEach(function(post) { %>
+            <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
+              <div class="card-header">
+                <p class="d-inline"><%= post.postedByString %></p>
+                <span class="text-muted fs-6 blog-date"><%= post.datePosted %></span>
+              </div>
+              <div class="card-body text-dark">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text">
+                  <%= post.content.substring(0, 200) %>
+                  <a href="/user-blogs/<%= post.id %>">Read more</a>
+                </p>
+              </div>
             </div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">A Sunny Day</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
 
-          <!-- BLOG 1  -->
-          <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
-            <div class="card-header">
-              <p class="d-inline">Dexter</p>
-              <span class="text-muted fs-6 blog-date">2021/04/01</span>
-            </div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">A Sunny Day</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+          <% }) %>
 
-          <!-- BLOG 1  -->
-          <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
-            <div class="card-header">
-              <p class="d-inline">Dexter</p>
-              <span class="text-muted fs-6 blog-date">2021/04/01</span>
-            </div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">A Sunny Day</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
 
-          <!-- BLOG 1  -->
-          <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
-            <div class="card-header">
-              <p class="d-inline">Dexter</p>
-              <span class="text-muted fs-6 blog-date">2021/04/01</span>
-            </div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">A Sunny Day</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <!-- BLOG 1  -->
-          <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
-            <div class="card-header">
-              <p class="d-inline">Dexter</p>
-              <span class="text-muted fs-6 blog-date">2021/04/01</span>
-            </div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">A Sunny Day</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
-
-          <!-- BLOG 1  -->
-          <div class="card border-grey mb-3 mx-3" style="max-width: 18rem">
-            <div class="card-header">
-              <p class="d-inline">Dexter</p>
-              <span class="text-muted fs-6 blog-date">2021/04/01</span>
-            </div>
-            <div class="card-body text-dark">
-              <h5 class="card-title">A Sunny Day</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            </div>
-          </div>
+ 
         </div>
 
         <!-- USER BLOGS END  -->
