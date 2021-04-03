@@ -10,8 +10,8 @@
       <h5 class="card-title">Account Information</h5>
       <p  class="card-text"><span class="fw-bold">Display name: </span><span id="display-name"></span></p>
       <div class="d-none" id="edit-display-name">
-        <form action="/dashboard/:userID/edit-display-name" method="post">
-            <input class="change-display-name" type="text">
+        <form action="/dashboard/<%= user.id %>/edit-display-name" method="post">
+            <input class="change-display-name" type="text" name="newDisplayName">
             <button type="button" onclick="confirmEditDisplayName()"  class="edit-btn btn btn-sm btn-primary">Confirm</button>
             <button type="button" onclick="cancelEditDisplayName()" class="cancel-btn btn btn-sm btn-secondary">Cancel</button>
         </form>

@@ -53,10 +53,25 @@ app.route("/dashboard/:userID")
 
 app.route("/dashboard/:userID/edit-display-name")
 .post((req, res) => {
+    if (req.isAuthenticated) {
+        if (req.params.userID === req.user.id) {
+            User.findById(req.user.id, (err, foundUser) =>{
+                foundUser.displayName = req.body.newDisplayName
+                foundUser.save().then(()=>{
+                    res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
+                })
+            })
+
+
+        } else {
+            res.redirect("/login")
+        }
+    } else {
+        res.redirect("/login")
+    }
+
+
     
-
-
-    res.render("userDashboard", {isAuthenticated: req.isAuthenticated(), user: userData(req.user), withPic: withPicture(userData(req.user))})
 })
 
 
