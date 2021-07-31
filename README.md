@@ -1,15 +1,10 @@
-# blog-web-app
+# A demo site
 
-A blog site
+URL: http://dexter-demo-blog-website-app.herokuapp.com/
 
-1. Developing a wireframe/prototype
-2. Coding front-end and static files
-3. Adding Node JS
-4. Adding Database
-5. Adding Authentication
+## Features
+- Sign up your own account by setting email and password
+- Sign up and sign in your account using Google account
+- User dashboard, where you can post your blog to public and see your blog history
 
-The blog app will be more like a complex newspaper website.
-It should have an admin area login where admin requires to login to add new articles.
-
-It may have a user area login too
-It may have a section where the blog post of other users will be displayed
+Used HTML/EJS, CSS, Bootstrap, MongoDB, Node.js/Express.js, and Git.
